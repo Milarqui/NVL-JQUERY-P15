@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>The Emperor of Mankind</title>
+   <style>
+    #Despues { //Con este estilo, ocultamos una de las imágenes y su label correspondiente
+     display: none;
+    }
+    #labDespues {
+     display: none;
+    }
+   </style>
+ </head>
+ <body>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script>
+    $( document ).ready(function() {
+     $( "#Change" ).on('click', function() {      //Al pulsar el botón
+      $( "#Antes" ).toggle(1000);                 //cambia el estado
+      $( "#labAntes" ).toggle(1000);              //de todos los 
+      $( "#Despues" ).toggle(1000);               //objetos que hay
+      $( "#labDespues" ).toggle(1000);            //en la pantalla
+      if($( "#Change" ).html() == "Fight!") {     //Así como el texto
+       $( "#Change" ).html("Go back in time!");   //del botón
+      }
+      else {
+       $( "#Change" ).html("Fight!");
+      }
+     });
+    });
+   </script>
+   <button id="Change" name="Change">Fight!</button>//Botón para cambiar el texto
+   <br/>
+   <br/>
+   <img id="Antes" height="400px" src="https://vignette.wikia.nocookie.net/characterprofile/images/c/c6/Warhammer_40000_-_The_God_Emperor_of_Mankind.png/revision/latest?cb=20170808032006">
+   <label id="labDespues" for="Despues">After the Duel</label>
+   <br/>
+   <label id="labAntes" for="Antes">Before the Duel</label>
+   <img id="Despues" height="400px" src="https://wh40k.lexicanum.com/mediawiki/images/e/e8/God-Emperor.jpg">
+ </body>
+</html>
